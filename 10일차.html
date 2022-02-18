@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10일차 - 전화 걸기</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<button>전화 걸기</button>
+</body>
+<script>
+    function clickCalling(){
+        setTimeout(calling, 2000);
+    }
+    function calling(){
+        alert("010-0000-0000에게 전화 거는 중");
+    }
+    document.getElementsByTagName("button")[0].addEventListener("click", clickCalling);
+</script>
+</html>

@@ -1,0 +1,44 @@
+body{
+    text-align: center;
+}
+
+#billboard{
+    display: inline-block;
+    width: 500px;
+    height: 300px;
+    background-color: black;
+    margin: 50px 0 30px;
+
+    line-height: 300px;
+}
+
+#div-1{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+
+}
+#div-2{
+    flex: 1;
+    display: flex;
+}
+#sentence{
+    flex: 0.7;
+}
+#createSentence{
+    flex: 0.3;
+    margin-left: 10px;
+}
+#showBtn{
+    flex: 1;
+}
+button{
+    margin: 5px 0;
+}
+
+input{
+    margin: 5px 0;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9일차 - 좋아하는 영화 객체로 만들기</title>
+</head>
+<body>
+<div class="movieButton">
+    <button onclick="new Movie('트루먼 쇼', '1998', '드라마/SF')">트루먼 쇼</button>
+    <button onclick="new Movie('인생은 아름다워', '1994', '블랙코미디, 전쟁, 드라마')">인생은 아름다워</button>
+    <button onclick="new Movie('사운드 오브 뮤직', '1965', '음악 드라마, 로맨스')">사운드 오브 뮤직</button>
+</div>
+</body>
+<script>
+    function Movie(name, year, genre){
+        this.name = name;
+        this.year = year;
+        this.genre = genre;
+
+        var show = document.getElementById("showMovie");
+        show.innerHTML = "<h2>" + name + "</h2>" +
+            "<ul><li>" + year + "</li><li>" + genre + "</li></ul>"
+    }
+    function
+</script>
+</html>

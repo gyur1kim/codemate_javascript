@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+}
+#time{
+    font-size: 3rem;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+button{
+    width: 130px;
+    padding: 8px;
+    background-color: white;
+    border: 3px solid #963996;
+    border-radius: 20px;
+}
+button:hover{
+    background-color: #f6e7f6;
+    cursor: pointer;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7일차 - 스톱워치 만들기</title>
+    <script src="js/7일차.js"></script>
+    <link rel="stylesheet" href="css/7일차.css">
+</head>
+<body>
+<div id="time">
+    <span id="minSpan">00</span>:<span id="secSpan">00</span>:<span id="mSecSpan">00</span>
+</div>
+<br>
+<button onclick="startTimer()">시작</button>
+<button onclick="stopTimer()">멈춤</button>
+<button onclick="resetTimer()">초기화</button>
+<script>
+    var minSpan = document.getElementById("minSpan");
+    var secSpan = document.getElementById("secSpan");
+    var mSecSpan = document.getElementById("mSecSpan");
+
+    var mSec = parseInt(mSecSpan.innerHTML);
+    var sec = parseInt(secSpan.innerHTML);
+    var min = parseInt(minSpan.innerHTML);
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6일차 - 사칙연산</title>
+    <style>
+        #result{
+            display: none;
+            padding: 0.5rem;
+            margin-top: 10px;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+    <script src="js/6일차.js"></script>
+</head>
+<body>
+<label for="valueX">
+    x <input type="text" id="valueX">
+</label>
+<br>
+<label for="valueY">
+    y <input type="text" id="valueY">
+</label>
+<button onclick="calculate()">계산하기</button>
+<button onclick="reset1()">새로고침</button>
+<br>
+<div id="result"></div>
+</body>
+</html>
