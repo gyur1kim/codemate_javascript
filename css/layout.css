@@ -10,6 +10,9 @@
     align-items: center;
     justify-content: center;
 }
+.chat{
+    text-align: center;
+}
 #chatImage{
     width: 450px;
     margin: 50px auto 30px;
@@ -21,8 +24,7 @@
 #chatImage>img{
     width: 35%;
 }
-
-form{
+#inputLayout{
     width: 450px;
     margin: 10px auto;
 
@@ -38,11 +40,27 @@ input[type="text"]{
     font-size: 1.2rem;
     padding: 0 5px;
 }
+#button{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
 input[type="button"]{
     margin-top: 1.5rem;
-    width: 40%;
     height: 2.5rem;
     border: 1px solid #7f9f7f;
     border-radius: 20px;
     background-color: #cbdccb;
+}
+input#chatBtn{
+    width: 50%;
+    margin-right: 0.6rem;
+}
+input#infoBtn{
+    width: 9%
+}
+input[type="button"]:hover{
+    background-color: #bdcbbd;
+    cursor: pointer;
 }

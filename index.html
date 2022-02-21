@@ -5,20 +5,29 @@
     <title>Chatbot</title>
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/font.css">
+    <script src="js/chatbot.js"></script>
 </head>
 <body>
 <div id="output">
     <div class="chat gangwonFont">
         안녕하세요! <br>
-        무지입니다~
+        무지입니다~ <br><br>
+        하고 싶은 말을 적어주세요!
     </div>
 </div>
 <div id="chatImage">
-    <img src="image/muzi_default.png" alt="인사하는 무지">
+    <img src="image/muzi.gif" alt="인사하는 무지">
 </div>
-<form action="#" method="get">
-    <input type="text" id="input" class="gangwonFont">
-    <input type="button" id="chatBtn" class="elandFont" value="시키기">
-</form>
+<div id="inputLayout">
+    <input type="text" id="console" class="gangwonFont" placeholder="하고 싶은 말을 적어보세요">
+    <div id="button">
+        <input type="button" id="chatBtn" class="elandFont" value="말 걸기">
+        <input type="button" id="infoBtn" class="elandFont" value="?">
+    </div>
+</div>
+<script>
+    document.getElementById("console").addEventListener("keydown", checkText);
+    document.getElementById("chatBtn").addEventListener("click", checkText);
+</script>
 </body>
 </html>
