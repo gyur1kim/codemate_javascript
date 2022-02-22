@@ -9,6 +9,14 @@ function checkText(e){
             case '' :
                 alert("⛔하고 싶은 말을 적어주세요!⛔");
                 break;
+            case '불 꺼줘' :
+                outputText.innerHTML = "알겠습니다!";
+                outputImg.src = "../image/muzi_okay.gif";
+                setTimeout(function(){
+                    document.body.style.backgroundColor = "#191939";
+                    document.getElementById('output').style.color='white';
+                }, 1000);
+                break;
             case '무지는 귀여워' :
                 outputText.innerHTML = "제가 귀엽다니! <br> 그런 말은 처음 들어봐요";
                 outputImg.src = "../image/muzi_shy.gif";
