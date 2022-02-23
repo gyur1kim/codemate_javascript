@@ -1,38 +1,115 @@
+var isDark = false;
+var isVisible = false;
+var isFollow = false;
+
 function checkText(e){
     if(e.target === document.getElementById("chatBtn") || e.keyCode === 13) {
         var outputText = document.getElementsByClassName("chat")[0];
         var outputImg = document.getElementsByTagName("img")[0];
-
         var value = document.getElementById("console").value;
 
-        switch (value){
-            case '' :
-                alert("⛔하고 싶은 말을 적어주세요!⛔");
-                break;
-            case '불 꺼줘' :
-                outputText.innerHTML = "알겠습니다!";
+        //질문 목록
+        if(value==='') {
+            alert("⛔하고 싶은 말을 적어주세요!⛔");
+        }
+        else if(isFollow && value.includes("그만")){
+            outputText.innerHTML = "그만 따라하겠습니다...";
+            outputImg.src = "../image/muzi_comfort.gif";
+            isFollow = false;
+        }
+        else if(isFollow){
+            outputText.innerHTML = value + " ㅋㅋㅋㅋ";
+            outputImg.src = "../image/muzi_laugh.gif";
+        }
+        else if(value.includes('안녕')){
+            outputText.innerHTML = "안녕하세요<br>무지라고 합니다~";
+            outputImg.src = "../image/muzi_congratulation.gif";
+        }
+        else if(value.includes('불 꺼')){
+            if(isDark === false) {
+                outputText.innerHTML = "알겠습니다!<br>불 끌게요!";
                 outputImg.src = "../image/muzi_okay.gif";
-                setTimeout(function(){
+                setTimeout(function () {
                     document.body.style.backgroundColor = "#191939";
-                    document.getElementById('output').style.color='white';
+                    document.getElementById('output').style.color = 'white';
                 }, 1000);
-                break;
-            case '무지는 귀여워' :
-                outputText.innerHTML = "제가 귀엽다니! <br> 그런 말은 처음 들어봐요";
-                outputImg.src = "../image/muzi_shy.gif";
-                break;
-            case '무지는 취미가 뭐야?' :
-                outputText.innerHTML = "제 취미는 스카이다이빙이에요~ <br> " +
-                    "뛰어내릴 때 짜릿해서 재미있어요!";
-                outputImg.src = "../image/muzi_diving.gif";
-                break;
-            default:
-                outputText.innerHTML = "처음 들어보는 말이에요";
-                outputImg.src = "../image/muzi_so_what.gif";
+                isDark = true;
+            }
+            else {
+                outputText.innerHTML = "지금도 어두운걸요...<br>무지는 이미 자러 갔어요";
+                outputImg.src = "../image/muzi_sleepy.gif";
+            }
+        }
+        else if(value.includes('불 켜')){
+            if(isDark === true) {
+                outputText.innerHTML = "불 킬게요~";
+                outputImg.src = "../image/muzi_exciting.gif";
+                setTimeout(function () {
+                    document.body.style.backgroundColor = "#FFFFFF";
+                    document.getElementById('output').style.color = 'black';
+                }, 1000);
+                isDark = false;
+            }
+            else {
+                outputText.innerHTML = "이렇게 밝은 걸요?<br>더 밝아지면 실명해버려요";
+                outputImg.src = "../image/muzi_refuse.gif";
+            }
+        }
+        else if(value.includes('귀여')) {
+            outputText.innerHTML = "제가 귀엽다니! <br> 칭찬 감사해요❤";
+            outputImg.src = "../image/muzi_heart_eye.gif";
+        }
+        else if(value.includes('취미')) {
+            outputText.innerHTML = "제 취미는 스카이다이빙이에요~ <br> " +
+                "뛰어내릴 때 짜릿해서 재미있어요!";
+            outputImg.src = "../image/muzi_diving.gif";
+        }
+        else if(value.includes('제일 예쁜')){
+            outputText.innerHTML = "그...그건...물론...<br><br>당신이에요...";
+            outputImg.src = "../image/muzi_sweating.gif";
+        }
+        else if(value.includes('따라해')){
+            outputText.innerHTML = "이제부터 당신 말을 따라할거에요!";
+            outputImg.src = "../image/muzi_emergency.gif";
+            isFollow = true;
+        }
+        else{
+            outputText.innerHTML = "처음 들어보는 말이라서 잘 몰라요";
+            outputImg.src = "../image/muzi_so_what.gif";
         }
 
         setTimeout(function(){
             document.getElementById("console").value = "";
         }, 1000);
+    }
+}
+
+function copyConsole(e){
+    var parent = e.currentTarget.parentElement;
+    var str = parent.innerText;
+
+    var inputConsole = document.getElementById("console");
+    inputConsole.value = str;
+}
+
+function toggleInfoDiv(){
+    var div = document.getElementById("infoDiv");
+    if(isVisible === false){
+        isVisible = true;
+
+        div.style.animation = "fadein 0.5s"
+        div.style.opacity = "1";
+        div.style.left = "10%";
+        questionBtn.classList.remove("fa-question");
+        questionBtn.classList.add("fa-xmark");
+    }
+    else{
+        isVisible = false;
+
+        div.style.animation = "fadeout 0.5s"
+        div.style.opacity = "0";
+        div.style.left = "-250px";
+        questionBtn.classList.remove("fa-xmark");
+        questionBtn.classList.add("fa-question");
     }
 }

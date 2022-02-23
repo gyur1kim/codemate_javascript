@@ -22,13 +22,35 @@
 <div id="inputLayout">
     <input type="text" id="console" class="gangwonFont" placeholder="하고 싶은 말을 적어보세요">
     <div id="button">
-        <button id="chatBtn" class="elandFont">말 걸기</button>
         <button id="infoBtn" class="elandFont"><i class="fa-solid fa-question"></i></button>
+        <button id="chatBtn" class="elandFont">말 걸기</button>
     </div>
+</div>
+<div id="infoDiv" class="gangwonFont">
+    <h4>무지에게 할 수 있는 말은<br>한정되어 있습니다</h4>
+    <ul>
+        <li>안녕 <i class="fa-solid fa-copy"></i></li>
+        <li>불 꺼줘 <i class="fa-solid fa-copy"></i></li>
+        <li>불 켜줘 <i class="fa-solid fa-copy"></i></li>
+        <li>세상에서 제일 예쁜/멋진 사람은 누구니? <i class="fa-solid fa-copy"></i></li>
+        <li>무지는 취미가 뭐니? <i class="fa-solid fa-copy"></i></li>
+        <li>무지는 정말 귀여워! <i class="fa-solid fa-copy"></i></li>
+    </ul>
+    <h4>무지는 말을 따라할 수도 있어요!</h4>
+    <ul>
+        <li>무지야 내 말을 따라해봐~ <i class="fa-solid fa-copy"></i></li>
+    </ul>
 </div>
 <script>
     document.getElementById("console").addEventListener("keydown", checkText);
     document.getElementById("chatBtn").addEventListener("click", checkText);
+    document.getElementById("infoBtn").addEventListener("click", toggleInfoDiv);
+    var copyList = document.getElementsByClassName("fa-copy");
+    for(var i=0;i<copyList.length;i++){
+        copyList[i].addEventListener("click", copyConsole);
+    }
+
+    var questionBtn = document.querySelector("#infoBtn>i");
 </script>
 </body>
 </html>
