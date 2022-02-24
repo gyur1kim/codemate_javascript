@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="css/font.css">
     <script src="js/chatbot.js"></script>
     <script src="https://kit.fontawesome.com/7ba6c794a6.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 </head>
 <body>
+<div id="test" class="gangwonFont"></div>
 <div id="output">
     <div class="chat gangwonFont">
         안녕하세요! <br>
@@ -41,6 +43,7 @@
         <li>무지야 내 말을 따라해봐~ <i class="fa-solid fa-copy"></i></li>
     </ul>
 </div>
+
 <script>
     document.getElementById("console").addEventListener("keydown", checkText);
     document.getElementById("chatBtn").addEventListener("click", checkText);
@@ -51,6 +54,9 @@
     }
 
     var questionBtn = document.querySelector("#infoBtn>i");
+    var test = document.getElementById("test");
+    var writeInfo = new Typewriter(test, {loop:false});
+    var writeStopFollow = new Typewriter(test, {loop:false});
 </script>
 </body>
 </html>

@@ -21,6 +21,7 @@
 
 body{
     transition: background-color 0.5s;
+    text-align: center;
     /*overflow: hidden;*/
 }
 
