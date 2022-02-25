@@ -142,6 +142,7 @@ button:hover{
 .fa-copy{
     font-size: 0.9rem;
     color: #7f9f7f;
+    margin-left: 0.5rem;
 }
 .fa-copy:hover{
     cursor: pointer;
